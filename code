@@ -1,0 +1,12 @@
+from picamera import PiCamera
+from time import sleep
+
+camera = PiCamera()
+
+image_number = 0
+while True:
+    sleep(60*5)
+    image_name = 'timelapse{0:04d}.jpg'.format(image_number)
+    camera.capture(image_name)
+    image_number += 1
+    
